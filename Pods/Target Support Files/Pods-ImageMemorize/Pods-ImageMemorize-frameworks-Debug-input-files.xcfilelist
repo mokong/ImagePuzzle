@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-ImageMemorize/Pods-ImageMemorize-frameworks.sh
+${BUILT_PRODUCTS_DIR}/LanguageManager-iOS/LanguageManager_iOS.framework
+${BUILT_PRODUCTS_DIR}/MKCommonSwiftLib/MKCommonSwiftLib.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
