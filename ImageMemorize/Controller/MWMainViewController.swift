@@ -49,6 +49,8 @@ class MWMainViewController: MWPuzzleBaseVC {
         topModule.displayImage = displayImage
         
         puzzleModule.initData()
+        
+        bottomModule.initData()
     }
     
     // MARK: - utils
