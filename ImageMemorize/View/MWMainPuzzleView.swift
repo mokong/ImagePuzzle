@@ -12,8 +12,8 @@ import MKCommonSwiftLib
 class MWMainPuzzleView: UIView {
 
     // MARK: - properties
-    private lazy var backView: UIView = UIView(frame: CGRect.zero)
-    private let kTagBeginValue: Int = 0
+    private(set) lazy var backView: UIView = UIView(frame: CGRect.zero)
+    let kTagBeginValue: Int = 0
     
     // MARK: - init
     override init(frame: CGRect) {
@@ -62,6 +62,7 @@ class MWMainPuzzleView: UIView {
             tempImageView.tag = kTagBeginValue + index
             
             tempImageView.backgroundColor = UIColor.custom.puzzleBack3
+            tempImageView.contentMode = .scaleToFill
             tempImageView.layer.borderColor = UIColor.custom.line.cgColor
             tempImageView.layer.borderWidth = 1.0
             tempImageView.snp.makeConstraints { make in
@@ -75,6 +76,16 @@ class MWMainPuzzleView: UIView {
         }
     }
     
+    func updateSingleView(with item: MWMainPuzzleItem) {
+        // get targetView from singleIndex
+        for subView in backView.subviews  {
+            if let subImageView = subView as? UIImageView,
+                subImageView.tag == kTagBeginValue + item.puzzleAreaIndex {
+                subImageView.image = item.image
+            }
+        }
+    }
+
     // MARK: - action
     
     

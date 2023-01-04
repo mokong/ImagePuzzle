@@ -26,6 +26,10 @@ class MWMainBottomModule {
         view.tappedCallback = { [weak self] index in
             self?.handleTapItem(index)
         }
+        
+        view.panCallback = { [weak self] panView in
+            self?.vc?.handelPanMove(panView)
+        }
     }
     
     func install() {

@@ -37,7 +37,9 @@ class MWMainPuzzleModule {
     }
     
     // MARK: - utils
-    
+    func updateSingleView(with item: MWMainPuzzleItem) {
+        view.updateSingleView(with: item)
+    }
     
     // MARK: - action
     

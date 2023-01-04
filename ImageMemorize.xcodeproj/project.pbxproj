@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4825B1EB295EDBBB000203D5 /* MWMainPuzzleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4825B1EA295EDBBB000203D5 /* MWMainPuzzleItem.swift */; };
 		4846550F295A7EBE0026B2AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846550E295A7EBE0026B2AB /* AppDelegate.swift */; };
 		48465518295A7EC00026B2AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48465517295A7EC00026B2AB /* Assets.xcassets */; };
 		4846551B295A7EC00026B2AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48465519295A7EC00026B2AB /* LaunchScreen.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4825B1EA295EDBBB000203D5 /* MWMainPuzzleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMainPuzzleItem.swift; sourceTree = "<group>"; };
 		4846550B295A7EBE0026B2AB /* ImageMemorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageMemorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4846550E295A7EBE0026B2AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48465517295A7EC00026B2AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		48465523295A8C7D0026B2AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4825B1EA295EDBBB000203D5 /* MWMainPuzzleItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				4846552F295AD97F0026B2AB /* MWPuzzleBaseVC.swift in Sources */,
 				48F20D07295BE3F200B5007F /* MWMainPuzzleView.swift in Sources */,
 				48465529295A90F80026B2AB /* MWMainTopModule.swift in Sources */,
+				4825B1EB295EDBBB000203D5 /* MWMainPuzzleItem.swift in Sources */,
 				4846552D295AD82F0026B2AB /* MWMainPuzzleModule.swift in Sources */,
 				48465527295A8D0C0026B2AB /* MWMainViewController.swift in Sources */,
 				4846553C295AEA340026B2AB /* MWMainTopView.swift in Sources */,

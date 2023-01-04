@@ -11,10 +11,11 @@ class MWMainBottomView: UIView {
 
     // MARK: - properties
     var tappedCallback: ((Int) -> Void)?
+    var panCallback: ((UIView) -> Void)?
     
     private lazy var backView = UIView(frame: CGRect.zero)
     private let kMaxInRow: Int = 5
-    private let kTagBeginValue: Int = 1100
+    let kTagBeginValue: Int = 1100
     private var initialCenter: CGPoint = .zero
     
     // MARK: - init
@@ -81,7 +82,12 @@ class MWMainBottomView: UIView {
                     make.width.height.equalTo(whValue)
                 }
             }
-            
+        }
+    }
+    
+    func resetPanViewCenter(_ panView: UIView) {
+        UIView.animate(withDuration: 0.5, delay: 0.0) {
+            panView.center = self.initialCenter
         }
     }
     
@@ -102,11 +108,10 @@ class MWMainBottomView: UIView {
             let translation = sender.translation(in: self.superview)
             panView.center = CGPoint(x: initialCenter.x + translation.x,
                                      y: initialCenter.y + translation.y)
-        case .ended,
-                .cancelled:
-            UIView.animate(withDuration: 0.5, delay: 0.0) {
-                panView.center = self.initialCenter
-            }
+        case .ended:
+            panCallback?(panView)
+        case .cancelled:
+            resetPanViewCenter(panView)
         default:
             break
         }
