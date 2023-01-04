@@ -6,7 +6,7 @@ def private_pods
 end
 
 def thirdparty_pods
-
+  pod 'Toast-Swift', '~> 5.0.1'
 end
 
 target 'ImageMemorize' do

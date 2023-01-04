@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Darwin
+import Toast_Swift
 
 class MWMainViewController: MWPuzzleBaseVC {
     
@@ -63,7 +64,7 @@ class MWMainViewController: MWPuzzleBaseVC {
         let convertRect = self.view.convert(pandView.frame, from: pandView.superview)
         var targetItem: MWMainPuzzleItem?
         for index in puzzleItems.keys {
-            guard var item = puzzleItems[index], item.image != nil else {
+            guard let item = puzzleItems[index], item.image == nil else {
                 continue
             }
             let rect = item.imageRect
@@ -74,7 +75,6 @@ class MWMainViewController: MWPuzzleBaseVC {
                     item.manualMatchAreaIndex = targetBtn.tag - bottomModule.view.kTagBeginValue
                 }
                 targetItem = item
-                puzzleItems[index] = item
                 break
             }
         }
@@ -102,13 +102,24 @@ class MWMainViewController: MWPuzzleBaseVC {
                 break
             }
         }
+        var msg: String = ""
         if !allMatched {
             // reset all views
-    
+            // Fixed-Me:
+            msg = "失败，再次尝试吧"
         } else {
             // move to next level
-            
+            // Fixed-Me:
+            msg = "恭喜，恭喜，干的漂亮"
         }
+        
+        if msg.count > 0 {
+            view.makeToast(msg)
+        }
+        // resetTimer
+        // if allMatched, then regenerate clip Image indexes, else just reset display
+        // Fixed-Me:
+        
     }
     
     // MARK: - action
@@ -116,16 +127,20 @@ class MWMainViewController: MWPuzzleBaseVC {
     
     // MARK: - other
     fileprivate func updateClipImageSizes() {
-        puzzleItems = [:]
         // get puzzle every piece of view frame
         for subImageView in puzzleModule.view.backView.subviews where subImageView.isKind(of: UIImageView.self) {
             // convert subimageView frame to VC.view coordinate
             let convertRect = self.view.convert(subImageView.frame, from: subImageView.superview)
             // save imageView rect and index to one item
-            var item = MWMainPuzzleItem()
-            item.imageRect = convertRect
-            item.puzzleAreaIndex = subImageView.tag - puzzleModule.view.kTagBeginValue
-            puzzleItems[item.puzzleAreaIndex] = item
+            let tagIndex = subImageView.tag - puzzleModule.view.kTagBeginValue
+            if let existItem = puzzleItems[tagIndex] {
+                existItem.imageRect = convertRect
+            } else {
+                let item = MWMainPuzzleItem()
+                item.imageRect = convertRect
+                item.puzzleAreaIndex = tagIndex
+                puzzleItems[tagIndex] = item
+            }
         }
     }
 

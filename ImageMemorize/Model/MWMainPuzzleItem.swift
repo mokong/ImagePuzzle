@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct MWMainPuzzleItem {
+class MWMainPuzzleItem {
     var puzzleAreaIndex: Int = -99 // 第几块区域
     var imageRect: CGRect = CGRect.zero // 图片区域
     var image: UIImage? // 图片
