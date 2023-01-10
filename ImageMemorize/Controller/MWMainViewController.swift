@@ -24,12 +24,13 @@ class MWMainViewController: MWPuzzleBaseVC {
         }
     }
     
-    private(set) var puzzleItems: [Int: MWMainPuzzleItem] = [:]
+    private(set) var puzzleItems: [MWMainPuzzleItem] = []
     private(set) var divideCount: Int = 9
     private(set) var matchCount: Int = 0
     private(set) var bottomDataList: [MWMainBottomItem] = []
     private(set) var clipImageSequenceList: [MWMainBottomItem] = []
     private(set) var needRefresh = false
+    private(set) var stepBackItem: UIBarButtonItem?
     
     // MARK: - view life cycle
     override func viewDidLoad() {
@@ -71,6 +72,8 @@ class MWMainViewController: MWPuzzleBaseVC {
     fileprivate func setupNavigationItems() {
         let rightNavItem = UIBarButtonItem(image: UIImage(named: "icon_set"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(handleSettingAction(_:)))
         navigationItem.rightBarButtonItem = rightNavItem
+        
+        stepBackItem = UIBarButtonItem(image: UIImage(named: "step_back"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(handleStepBack(_:)))
     }
     
     fileprivate func setupSubmodules() {
@@ -95,8 +98,9 @@ class MWMainViewController: MWPuzzleBaseVC {
         print(pandView.center)
         let convertRect = self.view.convert(pandView.frame, from: pandView.superview)
         var targetItem: MWMainPuzzleItem?
-        for index in puzzleItems.keys {
-            guard let item = puzzleItems[index], item.image == nil else {
+        
+        for item in puzzleItems {
+            guard item.image == nil else {
                 continue
             }
             let rect = item.imageRect
@@ -131,7 +135,7 @@ class MWMainViewController: MWPuzzleBaseVC {
     
     fileprivate func checkImagePositionMatched() {
         var allMatched = true
-        for item in puzzleItems.values {
+        for item in puzzleItems {
             if item.puzzleAreaIndex != item.manualMatchAreaIndex {
                 allMatched = false
                 break
@@ -139,7 +143,7 @@ class MWMainViewController: MWPuzzleBaseVC {
         }
         
         // clear puzzleItems
-        puzzleItems = [:]
+        puzzleItems = []
         
         var msg: String = ""
         if !allMatched {
@@ -242,6 +246,18 @@ class MWMainViewController: MWPuzzleBaseVC {
         needRefresh = true
     }
     
+    @objc fileprivate func handleStepBack(_ sender: UIBarButtonItem) {
+        // matchCount > 0, can step back
+        // puzzleItems pop last object by sequence
+        // bottomView update display
+        // puzzleView update display
+        if matchCount <= 0 {
+            return
+        }
+        matchCount -= 1
+        
+    }
+    
     // MARK: - other
     fileprivate func updateClipImageSizes() {
         // get puzzle every piece of view frame
@@ -250,13 +266,14 @@ class MWMainViewController: MWPuzzleBaseVC {
             let convertRect = self.view.convert(subImageView.frame, from: subImageView.superview)
             // save imageView rect and index to one item
             let tagIndex = subImageView.tag - puzzleModule.view.kTagBeginValue
-            if let existItem = puzzleItems[tagIndex] {
+            let existItem = puzzleItems.first(where: { $0.puzzleAreaIndex == tagIndex })
+            if let existItem = existItem {
                 existItem.imageRect = convertRect
             } else {
                 let item = MWMainPuzzleItem()
                 item.imageRect = convertRect
                 item.puzzleAreaIndex = tagIndex
-                puzzleItems[tagIndex] = item
+                puzzleItems.append(item)
             }
         }
     }
