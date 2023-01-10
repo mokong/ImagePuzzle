@@ -44,7 +44,12 @@ class MWMainBottomModule {
     func initData() {
         guard let vc = vc else { return }
 
-        view.updateSubviews(with: vc.divideCount)
+        view.updateSubviews(with: vc.divideCount, itemList: vc.clipImageSequenceList)
+    }
+    
+    func resetData(with itemList: [MWMainBottomItem]) {
+        guard let vc = vc else { return }
+        view.updateSubviews(with: vc.divideCount, itemList: itemList)
     }
     
     // MARK: - utils

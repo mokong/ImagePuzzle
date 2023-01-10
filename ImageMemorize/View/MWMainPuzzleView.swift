@@ -82,6 +82,7 @@ class MWMainPuzzleView: UIView {
             if let subImageView = subView as? UIImageView,
                 subImageView.tag == kTagBeginValue + item.puzzleAreaIndex {
                 subImageView.image = item.image
+                subImageView.contentMode = .scaleToFill
             }
         }
     }

@@ -41,7 +41,7 @@ class MWMainBottomView: UIView {
     }
     
     // MARK: - utils
-    func updateSubviews(with divideCount: Int) {
+    func updateSubviews(with divideCount: Int, itemList: [MWMainBottomItem]) {
         backView.removeAllSubviews()
         
         let remainNum = divideCount % kMaxInRow
@@ -69,9 +69,14 @@ class MWMainBottomView: UIView {
                 let singleBtn = UIButton(type: UIButton.ButtonType.custom)
                 backView.addSubview(singleBtn)
                 singleBtn.backgroundColor = UIColor.orange
-                singleBtn.tag = kTagBeginValue + i * kMaxInRow + j
-                singleBtn.setTitle(String(format: "%ld", singleBtn.tag - kTagBeginValue), for: .normal)
+                let currentIndex = i * kMaxInRow + j
+                singleBtn.tag = kTagBeginValue + currentIndex
                 singleBtn.setTitleColor(UIColor.custom.whiteText, for: UIControl.State.normal)
+                if currentIndex < itemList.count {
+                    let item = itemList[currentIndex]
+                    singleBtn.setBackgroundImage(item.image, for: .normal)
+                    singleBtn.setTitle("\(item.imageClipIndex)", for: .normal)
+                }
                 singleBtn.addTarget(self, action: #selector(handleBtnAction(_:)), for: .touchUpInside)
                 let panGes = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
                 singleBtn.addGestureRecognizer(panGes)

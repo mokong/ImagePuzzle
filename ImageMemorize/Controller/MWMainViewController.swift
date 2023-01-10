@@ -16,11 +16,18 @@ class MWMainViewController: MWPuzzleBaseVC {
     private(set) lazy var topModule = MWMainTopModule(self)
     private(set) lazy var puzzleModule = MWMainPuzzleModule(self)
     private(set) lazy var bottomModule = MWMainBottomModule(self)
-    private(set) var displayImage: UIImage?
+    private(set) var displayImage: UIImage? {
+        didSet {
+            generateBottomItemList()
+            generateClipImageNewSequenceList()
+        }
+    }
     
     private(set) var puzzleItems: [Int: MWMainPuzzleItem] = [:]
     private(set) var divideCount: Int = 9
     private(set) var matchCount: Int = 0
+    private(set) var bottomDataList: [MWMainBottomItem] = []
+    var clipImageSequenceList: [MWMainBottomItem] = []
     
     // MARK: - view life cycle
     override func viewDidLoad() {
@@ -71,8 +78,11 @@ class MWMainViewController: MWPuzzleBaseVC {
             if CGRectContainsRect(rect, convertRect) {
                 print(rect)
                 if let targetBtn = pandView as? UIButton {
-                    item.image = targetBtn.currentImage
-                    item.manualMatchAreaIndex = targetBtn.tag - bottomModule.view.kTagBeginValue
+                    let index = targetBtn.tag - bottomModule.view.kTagBeginValue
+                    let bottomItem = clipImageSequenceList[index]
+                    item.manualMatchAreaIndex = bottomItem.imageClipIndex
+                    item.image = bottomItem.image
+                    targetBtn.isHidden = true
                 }
                 targetItem = item
                 break
@@ -102,24 +112,101 @@ class MWMainViewController: MWPuzzleBaseVC {
                 break
             }
         }
+        
+        // clear puzzleItems
+        puzzleItems = [:]
+        
         var msg: String = ""
         if !allMatched {
             // reset all views
-            // Fixed-Me:
             msg = "失败，再次尝试吧"
+            showErrorAlert()
+            doesnotMatchResetDisplay()
         } else {
             // move to next level
-            // Fixed-Me:
             msg = "恭喜，恭喜，干的漂亮"
+            showSuccessAlert()
+            displayNewImageOrSequenceMatch()
         }
         
         if msg.count > 0 {
-            view.makeToast(msg)
+            view.makeToast(msg, duration: 0.3)
         }
-        // resetTimer
-        // if allMatched, then regenerate clip Image indexes, else just reset display
-        // Fixed-Me:
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.matchCount = 0
+            if !allMatched {
+                self.doesnotMatchResetDisplay()
+            } else {
+                // move to next level
+                self.displayNewImageOrSequenceMatch()
+                // resetTimer
+                self.topModule.resetTimer()
+            }
+        }
+    }
+    
+    fileprivate func showErrorAlert() {
+
+    }
+    
+    fileprivate func showSuccessAlert() {
+
+    }
+    
+    fileprivate func doesnotMatchResetDisplay() {
+        // Fixed-Me:
+        // 1. clear all image on puzzle view
+        // 2. reset all button on bottom view remain the same sequence
+        puzzleModule.resetData()
+        let itemList = self.clipImageSequenceList
+        bottomModule.resetData(with: itemList)
+    }
+    
+    fileprivate func displayNewImageOrSequenceMatch() {
+        // Fixed-Me:
+        // 1. clear all image on puzzle view
+        // 2. generate new image or not
+        // 3. reset all button on bottom view, regenerate new sequence
+        puzzleModule.resetData()
+        displayImage = UIImage(named: "")
+        generateClipImageNewSequenceList()
+        bottomModule.resetData(with: clipImageSequenceList)
+    }
+    
+    fileprivate func generateClipImageNewSequenceList() {
+        let randomList = createRandomMan(0, end: divideCount)
+        if randomList.count != bottomDataList.count {
+            print("generateClipImageNewSequenceList failed")
+            return
+        }
+        self.clipImageSequenceList = []
+        for i in randomList {
+            clipImageSequenceList.append(bottomDataList[i])
+        }
+    }
+    
+    fileprivate func generateBottomItemList() {
+        guard let displayImage = displayImage else { return }
+
+        bottomDataList = []
+        // clip image to divide pieces in sequence
+        let number = Int(sqrt(Double(divideCount)))
+        let width = displayImage.size.width / CGFloat(number)
+        let height = displayImage.size.height / CGFloat(number)
+        for row in 0..<number {
+            for column in 0..<number {
+                let x = CGFloat(column) * width
+                let y = CGFloat(row) * height
+                let rect = CGRect(x: x, y: y, width: width, height: height)
+                let image = displayImage.tailoring(in: rect)
+                let bottomItem = MWMainBottomItem()
+                bottomItem.image = image
+                bottomItem.imageClipIndex = row * number + column
+                print(bottomItem.imageClipIndex)
+                bottomDataList.append(bottomItem)
+            }
+        }
     }
     
     // MARK: - action
@@ -144,5 +231,18 @@ class MWMainViewController: MWPuzzleBaseVC {
         }
     }
 
+    fileprivate func createRandomMan(_ start: Int, end: Int) -> [Int] {
+        var nums: [Int] = []
+        for i in start..<end {
+            nums.append(i)
+        }
+        
+        var resultList: [Int] = []
+        while nums.count > 0 {
+            let index = Int.random(in: 0..<nums.count)
+            resultList.append(nums.remove(at: index))
+        }
+        return resultList
+    }
     
 }

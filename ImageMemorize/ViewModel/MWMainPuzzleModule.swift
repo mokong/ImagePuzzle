@@ -33,12 +33,18 @@ class MWMainPuzzleModule {
     }
     
     func initData() {
-        view.update(with: 9)
+        guard let vc = vc else { return }
+        view.update(with: vc.divideCount)
     }
     
     // MARK: - utils
     func updateSingleView(with item: MWMainPuzzleItem) {
         view.updateSingleView(with: item)
+    }
+    
+    func resetData() {
+        guard let vc = vc else { return }
+        view.update(with: vc.divideCount)
     }
     
     // MARK: - action

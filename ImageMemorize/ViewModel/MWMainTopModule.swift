@@ -52,7 +52,16 @@ class MWMainTopModule {
     }
     
     // MARK: - utils
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
     
+    func resetTimer() {
+        count = 0
+        stopTimer()
+        initData()
+    }
     
     // MARK: - action
     @objc fileprivate func handleTimeAdd() {

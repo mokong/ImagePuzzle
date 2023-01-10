@@ -48,6 +48,7 @@ public extension UIColor {
         public static let focusLineColor: UIColor = dynamicColor(light: UIColor(hex: 0xBDAB26), dark: UIColor(hex: 0xBDAB26))
         
         public static let navigationBar1: UIColor = dynamicColor(light: UIColor(hex: 0x53808c), dark: UIColor(hex: 0x53808c))
+        public static let error: UIColor = dynamicColor(light: UIColor(hex: 0xD85241), dark: UIColor(hex: 0xD85241))
 
     }
 }
