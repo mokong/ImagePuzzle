@@ -76,12 +76,15 @@ class MWPuzzleBaseWebVC: UIViewController {
 }
 
 extension MWPuzzleBaseWebVC: WKUIDelegate, WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        view.makeToastActivity(view.center)
+    }
+    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-
+        view.hideToastActivity()
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-
-        
+        view.hideToastActivity()
     }
 }

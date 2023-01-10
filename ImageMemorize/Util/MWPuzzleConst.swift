@@ -13,6 +13,11 @@ let kScreenHeigt = UIScreen.main.bounds.size.height
 
 let kEnableTintKey = "kEnableTintKey"
 let kRefreshMainVCNote = "kRefreshMainVCNote"
+/// 商店ID
+let kAppStoreID = "1664054825"
+/// 商店链接
+let kAppStoreUrl = "https://apps.apple.com/cn/app/qq/id1664054825"
+
 
 struct MWPuzzleConst {
     static func isEnableTint() -> Bool {

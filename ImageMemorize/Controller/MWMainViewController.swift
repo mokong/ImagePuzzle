@@ -50,6 +50,7 @@ class MWMainViewController: MWPuzzleBaseVC {
         super.viewWillAppear(animated)
         topModule.restartTimer()
         if needRefresh {
+            puzzleModule.resetData()
             bottomModule.resetData(with: clipImageSequenceList)
             needRefresh = false
         }
@@ -276,7 +277,7 @@ class MWMainViewController: MWPuzzleBaseVC {
  
     fileprivate func generateDisplayImage() -> UIImage? {
         let imageNamePrefix = "placeholder_image_"
-        let randomIndex = Int.random(in: 1...3)
+        let randomIndex = Int.random(in: 1...9)
         let imageName = imageNamePrefix + "\(randomIndex)"
         return UIImage(named: imageName)
     }

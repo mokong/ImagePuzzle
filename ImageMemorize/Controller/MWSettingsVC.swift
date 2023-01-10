@@ -67,6 +67,38 @@ class MWSettingsVC: MWPuzzleBaseVC {
         NotificationCenter.default.post(name: NSNotification.Name(kRefreshMainVCNote), object: nil)
     }
     
+    fileprivate func handleCustomImageAction() {
+        
+    }
+    
+    fileprivate func handleRecommendApps() {
+        // 分享 APP
+        view.makeToastActivity(self.view.center)
+        
+        let url = URL(string: kAppStoreUrl)
+        let array: [Any] = ["拼图", url as Any]
+        let activityVC = UIActivityViewController(activityItems: array, applicationActivities: nil)
+        
+        view.hideToastActivity()
+        present(activityVC, animated: true, completion: nil)
+        
+        activityVC.completionWithItemsHandler = { (type, completed, items, error) in
+            if completed {
+                print("分享成功")
+            }
+            else {
+                print("分享失败")
+            }
+        }
+    }
+    
+    fileprivate func handleMoveToPrivacyPage() {
+        let webVC = MWPuzzleBaseWebVC()
+        webVC.title = "隐私政策"
+        webVC.urlStr = "https://www.yuque.com/morgan-wang/ygyt1g/cchwo7c1505k82u1"
+        navigationController?.pushViewController(webVC, animated: true)
+    }
+    
     // MARK: - other
     
 
@@ -127,7 +159,20 @@ extension MWSettingsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        guard indexPath.row < dataList.count else {
+            return
+        }
+        let item = dataList[indexPath.row]
+        switch item.type {
+        case .customImage:
+            handleCustomImageAction()
+        case .recommendApps:
+            handleRecommendApps()
+        case .privacy:
+            handleMoveToPrivacyPage()
+        default:
+            break
+        }
     }
     
 }

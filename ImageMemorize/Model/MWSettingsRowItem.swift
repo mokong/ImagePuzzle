@@ -26,7 +26,7 @@ struct MWSettingsRowItem {
     }
     
     static func settingsList() -> [MWSettingsRowItem] {
-        let typeList: [ItemType] = [.degreeOfDiffculty, .customImage, .recommendApps, .privacy]
+        let typeList: [ItemType] = [.degreeOfDiffculty, .recommendApps, .privacy]
         var itemList: [MWSettingsRowItem] = []
         for tempType in typeList {
             let item = MWSettingsRowItem(type: tempType)
