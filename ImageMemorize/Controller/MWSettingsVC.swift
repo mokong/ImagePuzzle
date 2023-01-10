@@ -63,7 +63,8 @@ class MWSettingsVC: MWPuzzleBaseVC {
     // MARK: - action
     fileprivate func handleSwitch(_ isEnabledSwitch: Bool, item: MWSettingsRowItem) {
         // save value to lcoal, refresh after back to home page
-        
+        MWPuzzleConst.saveEnableTint(isEnabledSwitch)
+        NotificationCenter.default.post(name: NSNotification.Name(kRefreshMainVCNote), object: nil)
     }
     
     // MARK: - other
@@ -110,7 +111,9 @@ extension MWSettingsVC: UITableViewDelegate, UITableViewDataSource {
             let item = dataList[indexPath.row]
             cell?.update(item.type.rawValue)
             cell?.showSwitch = item.showSwitch
-            
+            if item.showSwitch {
+                cell?.rightSwitch.isOn = item.isSwitchOn
+            }
             cell?.switchValueChangedCallback = { [weak self] switchView in
                 self?.handleSwitch(switchView.isOn, item: item)
             }

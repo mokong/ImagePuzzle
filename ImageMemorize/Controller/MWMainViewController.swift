@@ -28,7 +28,8 @@ class MWMainViewController: MWPuzzleBaseVC {
     private(set) var divideCount: Int = 9
     private(set) var matchCount: Int = 0
     private(set) var bottomDataList: [MWMainBottomItem] = []
-    var clipImageSequenceList: [MWMainBottomItem] = []
+    private(set) var clipImageSequenceList: [MWMainBottomItem] = []
+    private(set) var needRefresh = false
     
     // MARK: - view life cycle
     override func viewDidLoad() {
@@ -38,9 +39,25 @@ class MWMainViewController: MWPuzzleBaseVC {
         self.title = "拼图"
         view.backgroundColor = UIColor.custom.third
         
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNeedRefreshNote), name: NSNotification.Name(rawValue: kRefreshMainVCNote), object: nil)
+        
         setupNavigationItems()
         setupSubmodules()
         initData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        topModule.restartTimer()
+        if needRefresh {
+            bottomModule.resetData(with: clipImageSequenceList)
+            needRefresh = false
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        topModule.pauseTimer()
     }
     
     override func viewDidLayoutSubviews() {
@@ -218,6 +235,10 @@ class MWMainViewController: MWPuzzleBaseVC {
     @objc fileprivate func handleSettingAction(_ sender: UIBarButtonItem) {
         let settingsVC = MWSettingsVC()
         navigationController?.pushViewController(settingsVC, animated: true)
+    }
+    
+    @objc fileprivate func handleNeedRefreshNote() {
+        needRefresh = true
     }
     
     // MARK: - other

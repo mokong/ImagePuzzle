@@ -21,6 +21,10 @@ struct MWSettingsRowItem {
         return type == .degreeOfDiffculty
     }
     
+    var isSwitchOn: Bool {
+        return MWPuzzleConst.isEnableTint()
+    }
+    
     static func settingsList() -> [MWSettingsRowItem] {
         let typeList: [ItemType] = [.degreeOfDiffculty, .customImage, .recommendApps, .privacy]
         var itemList: [MWSettingsRowItem] = []

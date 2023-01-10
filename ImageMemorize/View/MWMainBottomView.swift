@@ -17,6 +17,7 @@ class MWMainBottomView: UIView {
     private let kMaxInRow: Int = 5
     let kTagBeginValue: Int = 1100
     private var initialCenter: CGPoint = .zero
+    var isTintEnabled: Bool = false
     
     // MARK: - init
     override init(frame: CGRect) {
@@ -74,7 +75,7 @@ class MWMainBottomView: UIView {
                 singleView.updateTag(kTagBeginValue + currentIndex)
                 if currentIndex < itemList.count {
                     let item = itemList[currentIndex]
-                    singleView.updateBackgrounImage(item.image, title: "\(item.imageClipIndex + 1)")
+                    singleView.updateBackgrounImage(item.image, title: isTintEnabled ? "\(item.imageClipIndex + 1)" : nil)
                 }
                 singleView.tappedCallback = { [weak self] btn in
                     self?.handleBtnAction(btn)

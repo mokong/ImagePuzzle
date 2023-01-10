@@ -21,6 +21,8 @@ class MWMainBottomModule {
     }
     
     fileprivate func setupSubviews() {
+        let isTintEnabled = MWPuzzleConst.isEnableTint()
+        view.isTintEnabled = isTintEnabled
         vc?.view.addSubview(view)
         
         view.tappedCallback = { [weak self] index in
@@ -48,6 +50,9 @@ class MWMainBottomModule {
     }
     
     func resetData(with itemList: [MWMainBottomItem]) {
+        let isTintEnabled = MWPuzzleConst.isEnableTint()
+        view.isTintEnabled = isTintEnabled
+
         guard let vc = vc else { return }
         view.updateSubviews(with: vc.divideCount, itemList: itemList)
     }

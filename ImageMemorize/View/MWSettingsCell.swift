@@ -13,7 +13,7 @@ class MWSettingsCell: UITableViewCell {
     var switchValueChangedCallback: ((UISwitch) -> Void)?
     fileprivate lazy var titleLabel: UILabel = UILabel(frame: .zero)
     fileprivate lazy var rightImageView: UIImageView = UIImageView(image: UIImage(named: "icon_rightArrow"))
-    fileprivate lazy var rightSwitch: UISwitch = UISwitch(frame: CGRect.zero)
+    private(set) lazy var rightSwitch: UISwitch = UISwitch(frame: CGRect.zero)
     var showSwitch: Bool = false {
         didSet {
             rightSwitch.isHidden = !showSwitch

@@ -52,14 +52,19 @@ class MWMainTopModule {
     }
     
     // MARK: - utils
-    func stopTimer() {
+    func pauseTimer() {
         timer?.invalidate()
         timer = nil
     }
     
+    func restartTimer() {
+        initData()
+    }
+    
     func resetTimer() {
         count = 0
-        stopTimer()
+        timer?.invalidate()
+        timer = nil
         initData()
     }
     
