@@ -17,7 +17,7 @@ extension UIViewController {
     
     
     public static func navBarColor() -> UIColor {
-        return UIColor.custom.navigationBar1
+        return UIColor.custom.primary
     }
 
 }

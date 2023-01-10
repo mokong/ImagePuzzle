@@ -22,15 +22,15 @@ public extension UIColor {
     }
     
     enum MWPuzzleCustomColor {
-        public static let primary: UIColor = dynamicColor(light: UIColor(hex: 0x367EF5), dark: UIColor(hex: 0x367EF5))
-        public static let background: UIColor = dynamicColor(light: .white, dark: .white)
-        public static let lightBackground: UIColor = dynamicColor(light: UIColor(hex: 0xF8FBFF), dark: UIColor(hex: 0xF8FBFF))
+        public static let primary: UIColor = dynamicColor(light: UIColor(hex: 0x82AAE3), dark: UIColor(hex: 0x82AAE3))
+        public static let second: UIColor = dynamicColor(light: UIColor(hex: 0xACC4EB), dark: UIColor(hex: 0xACC4EB))
+        public static let third: UIColor = dynamicColor(light: UIColor(hex: 0xE2E9F7), dark: UIColor(hex: 0xE2E9F7))
+        public static let fourth: UIColor = dynamicColor(light: UIColor(hex: 0xEAFDFC), dark: UIColor(hex: 0xEAFDFC))
+        public static let fifth: UIColor = dynamicColor(light: UIColor.white, dark: UIColor.white)
+
         public static let buttonBackground: UIColor = dynamicColor(light: UIColor(hex: 0xF0F2F4), dark: UIColor(hex: 0xF0F2F4))
         public static let dimBack: UIColor = dynamicColor(light: UIColor(hex: 0x1C1C1C), dark: UIColor(hex: 0x1C1C1C))
         public static let lightDimBack: UIColor = dynamicColor(light: UIColor(hex: 0x272727), dark: UIColor(hex: 0x272727))
-        public static let puzzleBack: UIColor = dynamicColor(light: UIColor(hex: 0x2C7ABA), dark: UIColor(hex: 0x2C7ABA))
-        public static let puzzleBack2: UIColor = dynamicColor(light: UIColor(hex: 0xBCEBF8), dark: UIColor(hex: 0xBCEBF8))
-        public static let puzzleBack3: UIColor = dynamicColor(light: UIColor(hex: 0xA0CED4), dark: UIColor(hex: 0xA0CED4))
 
         public static let line: UIColor = dynamicColor(light: UIColor(hex: 0xF2F2F2), dark: UIColor(hex: 0xF2F2F2))
         public static let borderLine: UIColor = dynamicColor(light: UIColor(hex: 0xE1E1E1), dark: UIColor(hex: 0xE1E1E1))
@@ -47,7 +47,7 @@ public extension UIColor {
 
         public static let focusLineColor: UIColor = dynamicColor(light: UIColor(hex: 0xBDAB26), dark: UIColor(hex: 0xBDAB26))
         
-        public static let navigationBar1: UIColor = dynamicColor(light: UIColor(hex: 0x53808c), dark: UIColor(hex: 0x53808c))
+        public static let themeColor: UIColor = dynamicColor(light: UIColor(hex: 0x82AAE3), dark: UIColor(hex: 0x82AAE3))
         public static let error: UIColor = dynamicColor(light: UIColor(hex: 0xD85241), dark: UIColor(hex: 0xD85241))
 
     }

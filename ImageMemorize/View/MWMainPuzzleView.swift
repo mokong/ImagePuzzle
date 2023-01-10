@@ -29,10 +29,10 @@ class MWMainPuzzleView: UIView {
     fileprivate func setupSubviews() {
         isUserInteractionEnabled = true
         backView.isUserInteractionEnabled = true
-        backView.backgroundColor = UIColor.custom.puzzleBack
+        backView.backgroundColor = UIColor.custom.second
         addSubview(backView)
         backView.layer.borderWidth = 2.0
-        backView.layer.borderColor = UIColor.custom.line.cgColor
+        backView.layer.borderColor = UIColor.custom.fourth.cgColor
         
         backView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -61,9 +61,9 @@ class MWMainPuzzleView: UIView {
             backView.addSubview(tempImageView)
             tempImageView.tag = kTagBeginValue + index
             
-            tempImageView.backgroundColor = UIColor.custom.puzzleBack3
+            tempImageView.backgroundColor = UIColor.custom.second
             tempImageView.contentMode = .scaleToFill
-            tempImageView.layer.borderColor = UIColor.custom.line.cgColor
+            tempImageView.layer.borderColor = UIColor.custom.fourth.cgColor
             tempImageView.layer.borderWidth = 1.0
             tempImageView.snp.makeConstraints { make in
                 make.leading.equalToSuperview().inset(leftSpace)

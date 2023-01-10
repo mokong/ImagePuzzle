@@ -66,22 +66,23 @@ class MWMainBottomView: UIView {
             topSpace = CGFloat(i) * (gapSpace + whValue)
             for j in 0..<rowNum {
                 leftSpace = gapSpace +  CGFloat(j) * (whValue + gapSpace)
-                let singleBtn = UIButton(type: UIButton.ButtonType.custom)
-                backView.addSubview(singleBtn)
-                singleBtn.backgroundColor = UIColor.orange
+                
+                let singleView = MWMainBottomSingleView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
+                backView.addSubview(singleView)
+
                 let currentIndex = i * kMaxInRow + j
-                singleBtn.tag = kTagBeginValue + currentIndex
-                singleBtn.setTitleColor(UIColor.custom.whiteText, for: UIControl.State.normal)
+                singleView.updateTag(kTagBeginValue + currentIndex)
                 if currentIndex < itemList.count {
                     let item = itemList[currentIndex]
-                    singleBtn.setBackgroundImage(item.image, for: .normal)
-                    singleBtn.setTitle("\(item.imageClipIndex)", for: .normal)
+                    singleView.updateBackgrounImage(item.image, title: "\(item.imageClipIndex + 1)")
                 }
-                singleBtn.addTarget(self, action: #selector(handleBtnAction(_:)), for: .touchUpInside)
-                let panGes = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
-                singleBtn.addGestureRecognizer(panGes)
-                
-                singleBtn.snp.makeConstraints { make in
+                singleView.tappedCallback = { [weak self] btn in
+                    self?.handleBtnAction(btn)
+                }
+                singleView.panCallback = { [weak self] panGes in
+                    self?.handlePan(panGes)
+                }
+                singleView.snp.makeConstraints { make in
                     make.leading.equalToSuperview().inset(leftSpace)
                     make.top.equalToSuperview().inset(topSpace)
                     make.width.height.equalTo(whValue)

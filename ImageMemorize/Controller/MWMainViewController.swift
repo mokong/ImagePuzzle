@@ -20,6 +20,7 @@ class MWMainViewController: MWPuzzleBaseVC {
         didSet {
             generateBottomItemList()
             generateClipImageNewSequenceList()
+            topModule.displayImage = displayImage
         }
     }
     
@@ -35,8 +36,9 @@ class MWMainViewController: MWPuzzleBaseVC {
 
         // Do any additional setup after loading the view.
         self.title = "拼图"
-        view.backgroundColor = UIColor.custom.puzzleBack2
+        view.backgroundColor = UIColor.custom.third
         
+        setupNavigationItems()
         setupSubmodules()
         initData()
     }
@@ -48,6 +50,11 @@ class MWMainViewController: MWPuzzleBaseVC {
     }
     
     // MARK: - init
+    fileprivate func setupNavigationItems() {
+        let rightNavItem = UIBarButtonItem(image: UIImage(named: "icon_set"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(handleSettingAction(_:)))
+        navigationItem.rightBarButtonItem = rightNavItem
+    }
+    
     fileprivate func setupSubmodules() {
         topModule.install()
         puzzleModule.install()
@@ -55,7 +62,7 @@ class MWMainViewController: MWPuzzleBaseVC {
     }
     
     fileprivate func initData() {
-        displayImage = UIImage(named: "IMG_2361.JPG")
+        displayImage = generateDisplayImage()
         
         topModule.initData()
         topModule.displayImage = displayImage
@@ -121,19 +128,18 @@ class MWMainViewController: MWPuzzleBaseVC {
             // reset all views
             msg = "失败，再次尝试吧"
             showErrorAlert()
-            doesnotMatchResetDisplay()
         } else {
             // move to next level
             msg = "恭喜，恭喜，干的漂亮"
             showSuccessAlert()
-            displayNewImageOrSequenceMatch()
         }
         
+        let delayDuration = 1.1
         if msg.count > 0 {
-            view.makeToast(msg, duration: 0.3)
+            view.makeToast(msg, duration: delayDuration)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayDuration) {
             self.matchCount = 0
             if !allMatched {
                 self.doesnotMatchResetDisplay()
@@ -169,8 +175,7 @@ class MWMainViewController: MWPuzzleBaseVC {
         // 2. generate new image or not
         // 3. reset all button on bottom view, regenerate new sequence
         puzzleModule.resetData()
-        displayImage = UIImage(named: "")
-        generateClipImageNewSequenceList()
+        displayImage = generateDisplayImage()
         bottomModule.resetData(with: clipImageSequenceList)
     }
     
@@ -210,7 +215,10 @@ class MWMainViewController: MWPuzzleBaseVC {
     }
     
     // MARK: - action
-    
+    @objc fileprivate func handleSettingAction(_ sender: UIBarButtonItem) {
+        let settingsVC = MWSettingsVC()
+        navigationController?.pushViewController(settingsVC, animated: true)
+    }
     
     // MARK: - other
     fileprivate func updateClipImageSizes() {
@@ -244,5 +252,11 @@ class MWMainViewController: MWPuzzleBaseVC {
         }
         return resultList
     }
-    
+ 
+    fileprivate func generateDisplayImage() -> UIImage? {
+        let imageNamePrefix = "placeholder_image_"
+        let randomIndex = Int.random(in: 1...3)
+        let imageName = imageNamePrefix + "\(randomIndex)"
+        return UIImage(named: imageName)
+    }
 }

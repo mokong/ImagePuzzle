@@ -25,7 +25,7 @@ class MWPuzzleBaseVC: UIViewController {
         
         if #available(iOS 13.0, *) {
             let barAppearance = UINavigationBarAppearance()
-            barAppearance.backgroundColor = UIColor.custom.navigationBar1
+            barAppearance.backgroundColor = UIColor.custom.primary
             barAppearance.shadowColor = UIColor.clear
             barAppearance.titleTextAttributes = [
                 NSAttributedString.Key.foregroundColor: UIColor.white,
@@ -37,7 +37,7 @@ class MWPuzzleBaseVC: UIViewController {
         } else {
             // Fallback on earlier versions
             UINavigationBar.appearance().isTranslucent = false
-            UINavigationBar.appearance().barTintColor = UIColor.custom.navigationBar1
+            UINavigationBar.appearance().barTintColor = UIColor.custom.primary
         }
     }
     

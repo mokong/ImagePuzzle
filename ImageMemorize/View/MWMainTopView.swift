@@ -54,16 +54,16 @@ class MWMainTopView: UIView {
     }
     
     fileprivate func setupTimeBtn() {
-        timeBtn.titleLabel?.font = UIFont.custom.courierFont
-        timeBtn.setTitleColor(UIColor.custom.secondaryText, for: UIControl.State.normal)
+        timeBtn.titleLabel?.font = UIFont.custom.courierMediumFont
+        timeBtn.setTitleColor(UIColor.custom.primary, for: UIControl.State.normal)
         addSubview(timeBtn)
         let kTimeBtnH: CGFloat = 32.0
         timeBtn.layer.cornerRadius = kTimeBtnH / 2.0
-        timeBtn.layer.borderWidth = 1.0
-        timeBtn.layer.borderColor = UIColor.custom.background.cgColor
+        timeBtn.layer.borderWidth = 1.5
+        timeBtn.layer.borderColor = UIColor.custom.primary.cgColor
         
         timeBtn.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(40.0)
+            make.leading.equalToSuperview().inset(32.0)
             make.height.equalTo(kTimeBtnH)
             make.width.equalTo(78.0)
             make.centerY.equalToSuperview()
