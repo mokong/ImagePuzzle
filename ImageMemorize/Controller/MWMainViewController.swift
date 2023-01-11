@@ -27,6 +27,7 @@ class MWMainViewController: MWPuzzleBaseVC {
     private(set) var puzzleItems: [MWMainPuzzleItem] = []
     private(set) var divideCount: Int = 9
     private(set) var matchCount: Int = 0
+    private(set) var matchSequenceList: [MWMainPuzzleItem] = []
     private(set) var bottomDataList: [MWMainBottomItem] = []
     private(set) var clipImageSequenceList: [MWMainBottomItem] = []
     private(set) var needRefresh = false
@@ -121,6 +122,7 @@ class MWMainViewController: MWPuzzleBaseVC {
             // means pan ended frame in targetRect,
             // then display pan image in targetRect
             puzzleModule.updateSingleView(with: targetItem)
+            matchSequenceList.append(targetItem)
             matchCount += 1
         } else {
             // means not match
@@ -130,6 +132,16 @@ class MWMainViewController: MWPuzzleBaseVC {
         if matchCount == divideCount {
             // all image have been placed, then check their position
             checkImagePositionMatched()
+        }
+        
+        updateStepbackDisplay()
+    }
+    
+    fileprivate func updateStepbackDisplay() {
+        if matchCount > 0 {
+            navigationItem.leftBarButtonItem = stepBackItem
+        } else {
+            navigationItem.leftBarButtonItem = nil
         }
     }
     
@@ -144,6 +156,7 @@ class MWMainViewController: MWPuzzleBaseVC {
         
         // clear puzzleItems
         puzzleItems = []
+        matchSequenceList = []
         
         var msg: String = ""
         if !allMatched {
@@ -183,7 +196,6 @@ class MWMainViewController: MWPuzzleBaseVC {
     }
     
     fileprivate func doesnotMatchResetDisplay() {
-        // Fixed-Me:
         // 1. clear all image on puzzle view
         // 2. reset all button on bottom view remain the same sequence
         puzzleModule.resetData()
@@ -192,7 +204,6 @@ class MWMainViewController: MWPuzzleBaseVC {
     }
     
     fileprivate func displayNewImageOrSequenceMatch() {
-        // Fixed-Me:
         // 1. clear all image on puzzle view
         // 2. generate new image or not
         // 3. reset all button on bottom view, regenerate new sequence
@@ -209,6 +220,8 @@ class MWMainViewController: MWPuzzleBaseVC {
         }
         self.clipImageSequenceList = []
         for i in randomList {
+            let bottomItem = bottomDataList[i]
+            bottomItem.displayIndex = clipImageSequenceList.count
             clipImageSequenceList.append(bottomDataList[i])
         }
     }
@@ -255,7 +268,19 @@ class MWMainViewController: MWPuzzleBaseVC {
             return
         }
         matchCount -= 1
-        
+        guard let latestItem = matchSequenceList.popLast() else {
+            return
+        }
+        puzzleModule.retrieveBack(with: latestItem.puzzleAreaIndex)
+
+        for tempBottomItem in clipImageSequenceList {
+            if tempBottomItem.image == latestItem.image {
+                bottomModule.retrieveBack(with: tempBottomItem)
+                break
+            }
+        }
+        latestItem.image = nil
+        updateStepbackDisplay()
     }
     
     // MARK: - other

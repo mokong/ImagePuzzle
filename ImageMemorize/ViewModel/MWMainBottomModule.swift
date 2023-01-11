@@ -57,6 +57,10 @@ class MWMainBottomModule {
         view.updateSubviews(with: vc.divideCount, itemList: itemList)
     }
     
+    func retrieveBack(with item: MWMainBottomItem) {
+        view.retrieveBack(with: item)
+    }
+    
     // MARK: - utils
     
     

@@ -10,5 +10,6 @@ import UIKit
 
 class MWMainBottomItem {
     var image: UIImage? // 图片
-    var imageClipIndex: Int = -99 
+    var imageClipIndex: Int = -99
+    var displayIndex: Int = -1
 }

@@ -78,13 +78,24 @@ class MWMainPuzzleView: UIView {
     
     func updateSingleView(with item: MWMainPuzzleItem) {
         // get targetView from singleIndex
+        let targetImageView = getSubImageView(from: item.puzzleAreaIndex)
+        targetImageView?.image = item.image
+        targetImageView?.contentMode = .scaleToFill
+    }
+    
+    func retrieveBack(with puzzleIndex: Int) {
+        let targetImageView = getSubImageView(from: puzzleIndex)
+        targetImageView?.image = nil
+    }
+    
+    fileprivate func getSubImageView(from index: Int) -> UIImageView? {
         for subView in backView.subviews  {
             if let subImageView = subView as? UIImageView,
-                subImageView.tag == kTagBeginValue + item.puzzleAreaIndex {
-                subImageView.image = item.image
-                subImageView.contentMode = .scaleToFill
+                subImageView.tag == kTagBeginValue + index {
+                return subImageView
             }
         }
+        return nil
     }
 
     // MARK: - action

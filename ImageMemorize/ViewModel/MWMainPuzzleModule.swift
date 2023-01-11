@@ -42,6 +42,10 @@ class MWMainPuzzleModule {
         view.updateSingleView(with: item)
     }
     
+    func retrieveBack(with puzzleIndex: Int) {
+        view.retrieveBack(with: puzzleIndex)
+    }
+    
     func resetData() {
         guard let vc = vc else { return }
         view.update(with: vc.divideCount)
