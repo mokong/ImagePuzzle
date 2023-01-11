@@ -92,6 +92,28 @@ class MWMainBottomView: UIView {
         }
     }
     
+    fileprivate func getTargetView(from index: Int) -> MWMainBottomSingleView? {
+        for subview in backView.subviews {
+            if let tempSingleView = subview as? MWMainBottomSingleView,
+               tempSingleView.singleBtn.tag == kTagBeginValue + index {
+                return tempSingleView
+            }
+        }
+        return nil
+    }
+    
+    func retrieveBack(with item: MWMainBottomItem) {
+        guard let targetSingleView = getTargetView(from: item.displayIndex) else {
+            return
+        }
+        targetSingleView.singleBtn.isHidden = false
+        var frame = targetSingleView.singleBtn.frame
+        frame.origin = CGPoint.zero
+        UIView.animate(withDuration: 0.3, delay: 0, options: UIView.AnimationOptions.curveLinear) {
+            targetSingleView.singleBtn.frame = frame
+        }
+    }
+    
     func resetPanViewCenter(_ panView: UIView) {
         UIView.animate(withDuration: 0.5, delay: 0.0) {
             panView.center = self.initialCenter

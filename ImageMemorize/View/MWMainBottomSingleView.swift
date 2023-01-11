@@ -12,7 +12,7 @@ class MWMainBottomSingleView: UIView {
     // MARK: - properties
     var tappedCallback: ((UIButton) -> Void)?
     var panCallback: ((UIPanGestureRecognizer) -> Void)?
-    fileprivate lazy var singleBtn = UIButton(type: UIButton.ButtonType.custom)
+    private(set) lazy var singleBtn = UIButton(type: UIButton.ButtonType.custom)
 
     // MARK: - init
     override init(frame: CGRect) {
