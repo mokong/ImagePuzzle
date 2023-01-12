@@ -11,8 +11,10 @@ import SnapKit
 class ImagePuzzleMainTopView: UIView {
 
     // MARK: - properties
+    var fullImageTapCallback: (() -> Void)?
+    
     private lazy var timeBtn = UIButton(type: UIButton.ButtonType.custom)
-    private lazy var fullImageView = UIImageView(frame: .zero)
+    private(set) lazy var fullImageView = UIImageView(frame: .zero)
     
     var fullImage: UIImage? {
         didSet {
@@ -72,6 +74,10 @@ class ImagePuzzleMainTopView: UIView {
     
     fileprivate func setupFullImageView() {
         addSubview(fullImageView)
+        fullImageView.isUserInteractionEnabled = true
+        
+        let tapGes = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        fullImageView.addGestureRecognizer(tapGes)
         
         fullImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
@@ -85,7 +91,9 @@ class ImagePuzzleMainTopView: UIView {
     
     
     // MARK: - action
-    
+    @objc fileprivate func handleTap() {
+        fullImageTapCallback?()
+    }
     
     // MARK: - other
     

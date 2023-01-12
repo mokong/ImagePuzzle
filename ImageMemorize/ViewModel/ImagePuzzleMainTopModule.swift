@@ -31,6 +31,10 @@ class ImagePuzzleMainTopModule {
     
     fileprivate func setupSubviews() {
         vc?.view.addSubview(view)
+        
+        view.fullImageTapCallback = { [weak self] in
+            self?.handleFullImagePreview()
+        }
     }
     
     func install() {
@@ -77,6 +81,10 @@ class ImagePuzzleMainTopModule {
         let secondsStr = getTimeDisplayStr(seconds)
         let minuteStr = getTimeDisplayStr(minute)
         view.btnText = minuteStr + ":" + secondsStr
+    }
+    
+    fileprivate func handleFullImagePreview() {
+        vc?.previewModule.show()
     }
     
     // MARK: - other

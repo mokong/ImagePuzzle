@@ -16,6 +16,8 @@ class ImagePuzzleMainViewController: ImagePuzzlePuzzleBaseVC {
     private(set) lazy var topModule = ImagePuzzleMainTopModule(self)
     private(set) lazy var puzzleModule = ImagePuzzleMainPuzzleModule(self)
     private(set) lazy var bottomModule = ImagePuzzleMainBottomModule(self)
+    private(set) lazy var previewModule = ImagePuzzleMainBigImageModule(self)
+    
     private(set) var displayImage: UIImage? {
         didSet {
             generateBottomItemList()
