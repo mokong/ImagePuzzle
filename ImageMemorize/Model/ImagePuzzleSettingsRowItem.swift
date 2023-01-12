@@ -1,13 +1,13 @@
 //
-//  MWSettingsRowItem.swift
+//  ImagePuzzleSettingsRowItem.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 10/01/2023.
+//  Created by MorganWang on 10/01/2023.
 //
 
 import Foundation
 
-struct MWSettingsRowItem {
+struct ImagePuzzleSettingsRowItem {
     enum ItemType: String {
         case degreeOfDiffculty = "提示开关"
         case customImage = "自定义图片"
@@ -22,14 +22,14 @@ struct MWSettingsRowItem {
     }
     
     var isSwitchOn: Bool {
-        return MWPuzzleConst.isEnableTint()
+        return ImagePuzzleConst.isEnableTint()
     }
     
-    static func settingsList() -> [MWSettingsRowItem] {
+    static func settingsList() -> [ImagePuzzleSettingsRowItem] {
         let typeList: [ItemType] = [.degreeOfDiffculty, .recommendApps, .privacy]
-        var itemList: [MWSettingsRowItem] = []
+        var itemList: [ImagePuzzleSettingsRowItem] = []
         for tempType in typeList {
-            let item = MWSettingsRowItem(type: tempType)
+            let item = ImagePuzzleSettingsRowItem(type: tempType)
             itemList.append(item)
         }
         return itemList

@@ -1,27 +1,27 @@
 //
-//  MWMainBottomModule.swift
+//  ImagePuzzleMainBottomModule.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 27/12/2022.
+//  Created by MorganWang on 27/12/2022.
 //
 
 import Foundation
 import UIKit
 
-class MWMainBottomModule {
+class ImagePuzzleMainBottomModule {
     // MARK: - properties
-    private(set) weak var vc: MWMainViewController?
-    private(set) lazy var view = MWMainBottomView(frame: .zero)
+    private(set) weak var vc: ImagePuzzleMainViewController?
+    private(set) lazy var view = ImagePuzzleMainBottomView(frame: .zero)
     
     // MARK: - init
-    init(_ vc: MWMainViewController) {
+    init(_ vc: ImagePuzzleMainViewController) {
         self.vc = vc
         
         setupSubviews()
     }
     
     fileprivate func setupSubviews() {
-        let isTintEnabled = MWPuzzleConst.isEnableTint()
+        let isTintEnabled = ImagePuzzleConst.isEnableTint()
         view.isTintEnabled = isTintEnabled
         vc?.view.addSubview(view)
         
@@ -49,15 +49,15 @@ class MWMainBottomModule {
         view.updateSubviews(with: vc.divideCount, itemList: vc.clipImageSequenceList)
     }
     
-    func resetData(with itemList: [MWMainBottomItem]) {
-        let isTintEnabled = MWPuzzleConst.isEnableTint()
+    func resetData(with itemList: [ImagePuzzleMainBottomItem]) {
+        let isTintEnabled = ImagePuzzleConst.isEnableTint()
         view.isTintEnabled = isTintEnabled
 
         guard let vc = vc else { return }
         view.updateSubviews(with: vc.divideCount, itemList: itemList)
     }
     
-    func retrieveBack(with item: MWMainBottomItem) {
+    func retrieveBack(with item: ImagePuzzleMainBottomItem) {
         view.retrieveBack(with: item)
     }
     

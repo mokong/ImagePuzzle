@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 27/12/2022.
+//  Created by MorganWang on 27/12/2022.
 //
 
 import UIKit
@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
         
-        let mainNC = MWPuzzleBaseNC(rootViewController: MWMainViewController())
+        let mainNC = ImagePuzzlePuzzleBaseNC(rootViewController: ImagePuzzleMainViewController())
         self.window?.rootViewController = mainNC
         self.window?.makeKeyAndVisible()
         

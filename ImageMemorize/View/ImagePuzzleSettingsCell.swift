@@ -1,13 +1,13 @@
 //
-//  MWSettingsCell.swift
+//  ImagePuzzleSettingsCell.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 10/01/2023.
+//  Created by MorganWang on 10/01/2023.
 //
 
 import UIKit
 
-class MWSettingsCell: UITableViewCell {
+class ImagePuzzleSettingsCell: UITableViewCell {
 
     // MARK: - properties
     var switchValueChangedCallback: ((UISwitch) -> Void)?
@@ -85,7 +85,7 @@ class MWSettingsCell: UITableViewCell {
     
     // MARK: - other
     class func reuseIdentifer() -> String {
-        return "MWSettingsCell"
+        return "ImagePuzzleSettingsCell"
     }
 
 }

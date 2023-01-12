@@ -1,13 +1,13 @@
 //
-//  MWSettingsHeaderView.swift
+//  ImagePuzzleSettingsHeaderView.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 10/01/2023.
+//  Created by MorganWang on 10/01/2023.
 //
 
 import UIKit
 
-class MWSettingsHeaderView: UIView {
+class ImagePuzzleSettingsHeaderView: UIView {
 
     // MARK: - properties
     fileprivate lazy var displayImageView = UIImageView(image: UIImage(named: "icon_launch"))

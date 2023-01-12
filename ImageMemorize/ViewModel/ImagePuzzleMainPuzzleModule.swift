@@ -1,20 +1,20 @@
 //
-//  MWMainPuzzleModule.swift
+//  ImagePuzzleMainPuzzleModule.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 27/12/2022.
+//  Created by MorganWang on 27/12/2022.
 //
 
 import Foundation
 import UIKit
 
-class MWMainPuzzleModule {
+class ImagePuzzleMainPuzzleModule {
     // MARK: - properties
-    private(set) weak var vc: MWMainViewController?
-    private(set) lazy var view = MWMainPuzzleView(frame: .zero)
+    private(set) weak var vc: ImagePuzzleMainViewController?
+    private(set) lazy var view = ImagePuzzleMainPuzzleView(frame: .zero)
     
     // MARK: - init
-    init(_ vc: MWMainViewController) {
+    init(_ vc: ImagePuzzleMainViewController) {
         self.vc = vc
         
         setupSubviews()
@@ -38,7 +38,7 @@ class MWMainPuzzleModule {
     }
     
     // MARK: - utils
-    func updateSingleView(with item: MWMainPuzzleItem) {
+    func updateSingleView(with item: ImagePuzzleMainPuzzleItem) {
         view.updateSingleView(with: item)
     }
     
