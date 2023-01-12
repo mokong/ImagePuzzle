@@ -20,6 +20,7 @@
 		48465534295ADA340026B2AB /* ImagePuzzlePuzzleBaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465533295ADA340026B2AB /* ImagePuzzlePuzzleBaseNC.swift */; };
 		4846553C295AEA340026B2AB /* ImagePuzzleMainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846553B295AEA340026B2AB /* ImagePuzzleMainTopView.swift */; };
 		486475CB29657D19002BF403 /* ImagePuzzleMainBottomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486475CA29657D19002BF403 /* ImagePuzzleMainBottomItem.swift */; };
+		48EA0C45296FF89900BF78BB /* ImagePuzzleMainBigImagePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA0C44296FF89900BF78BB /* ImagePuzzleMainBigImagePreview.swift */; };
 		48F20D07295BE3F200B5007F /* ImagePuzzleMainPuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F20D06295BE3F200B5007F /* ImagePuzzleMainPuzzleView.swift */; };
 		48F20D09295C0C6E00B5007F /* ImagePuzzleConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F20D08295C0C6E00B5007F /* ImagePuzzleConst.swift */; };
 		48F20D12295C251300B5007F /* ImagePuzzleMainBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F20D11295C251300B5007F /* ImagePuzzleMainBottomView.swift */; };
@@ -37,6 +38,7 @@
 		48F2194C296D559A0051CA4E /* placeholder_image_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F21946296D559A0051CA4E /* placeholder_image_6@2x.png */; };
 		48F2194D296D559A0051CA4E /* placeholder_image_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F21947296D559A0051CA4E /* placeholder_image_5@2x.png */; };
 		48F2194F296D55B70051CA4E /* placeholder_image_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F2194E296D55B70051CA4E /* placeholder_image_9@2x.png */; };
+		48F97014296FFE7C004E2FFC /* ImagePuzzleMainBigImageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F97013296FFE7C004E2FFC /* ImagePuzzleMainBigImageModule.swift */; };
 		814CDC0D8837846FDEF17AE1 /* Pods_ImageMemorize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52A627D75EABDC0AF43B021 /* Pods_ImageMemorize.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,7 @@
 		48465533295ADA340026B2AB /* ImagePuzzlePuzzleBaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzlePuzzleBaseNC.swift; sourceTree = "<group>"; };
 		4846553B295AEA340026B2AB /* ImagePuzzleMainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainTopView.swift; sourceTree = "<group>"; };
 		486475CA29657D19002BF403 /* ImagePuzzleMainBottomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainBottomItem.swift; sourceTree = "<group>"; };
+		48EA0C44296FF89900BF78BB /* ImagePuzzleMainBigImagePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainBigImagePreview.swift; sourceTree = "<group>"; };
 		48F20D06295BE3F200B5007F /* ImagePuzzleMainPuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainPuzzleView.swift; sourceTree = "<group>"; };
 		48F20D08295C0C6E00B5007F /* ImagePuzzleConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleConst.swift; sourceTree = "<group>"; };
 		48F20D11295C251300B5007F /* ImagePuzzleMainBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainBottomView.swift; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 		48F21946296D559A0051CA4E /* placeholder_image_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_image_6@2x.png"; sourceTree = "<group>"; };
 		48F21947296D559A0051CA4E /* placeholder_image_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_image_5@2x.png"; sourceTree = "<group>"; };
 		48F2194E296D55B70051CA4E /* placeholder_image_9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_image_9@2x.png"; sourceTree = "<group>"; };
+		48F97013296FFE7C004E2FFC /* ImagePuzzleMainBigImageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainBigImageModule.swift; sourceTree = "<group>"; };
 		6C608F4E604A2201F4B4CDED /* Pods-ImageMemorize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageMemorize.debug.xcconfig"; path = "Target Support Files/Pods-ImageMemorize/Pods-ImageMemorize.debug.xcconfig"; sourceTree = "<group>"; };
 		C6C9CB3DAA64453F29A961DD /* Pods-ImageMemorize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageMemorize.release.xcconfig"; path = "Target Support Files/Pods-ImageMemorize/Pods-ImageMemorize.release.xcconfig"; sourceTree = "<group>"; };
 		D52A627D75EABDC0AF43B021 /* Pods_ImageMemorize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageMemorize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +160,7 @@
 				48F21930296D12220051CA4E /* ImagePuzzleMainBottomSingleView.swift */,
 				48F21936296D332E0051CA4E /* ImagePuzzleSettingsCell.swift */,
 				48F21940296D42A60051CA4E /* ImagePuzzleSettingsHeaderView.swift */,
+				48EA0C44296FF89900BF78BB /* ImagePuzzleMainBigImagePreview.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				48465528295A90F80026B2AB /* ImagePuzzleMainTopModule.swift */,
 				4846552C295AD82F0026B2AB /* ImagePuzzleMainPuzzleModule.swift */,
 				4846552A295A91000026B2AB /* ImagePuzzleMainBottomModule.swift */,
+				48F97013296FFE7C004E2FFC /* ImagePuzzleMainBigImageModule.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -345,11 +351,13 @@
 				486475CB29657D19002BF403 /* ImagePuzzleMainBottomItem.swift in Sources */,
 				48465529295A90F80026B2AB /* ImagePuzzleMainTopModule.swift in Sources */,
 				48F21937296D332E0051CA4E /* ImagePuzzleSettingsCell.swift in Sources */,
+				48F97014296FFE7C004E2FFC /* ImagePuzzleMainBigImageModule.swift in Sources */,
 				4825B1EB295EDBBB000203D5 /* ImagePuzzleMainPuzzleItem.swift in Sources */,
 				4846552D295AD82F0026B2AB /* ImagePuzzleMainPuzzleModule.swift in Sources */,
 				48F21933296D2CBC0051CA4E /* ImagePuzzleSettingsVC.swift in Sources */,
 				48465527295A8D0C0026B2AB /* ImagePuzzleMainViewController.swift in Sources */,
 				4846553C295AEA340026B2AB /* ImagePuzzleMainTopView.swift in Sources */,
+				48EA0C45296FF89900BF78BB /* ImagePuzzleMainBigImagePreview.swift in Sources */,
 				48F20D12295C251300B5007F /* ImagePuzzleMainBottomView.swift in Sources */,
 				4846552B295A91000026B2AB /* ImagePuzzleMainBottomModule.swift in Sources */,
 				48F21941296D42A60051CA4E /* ImagePuzzleSettingsHeaderView.swift in Sources */,
