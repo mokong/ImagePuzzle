@@ -1,16 +1,38 @@
 //
-//  MWPuzzleBaseVC.swift
+//  ImagePuzzlePuzzleBaseVC.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 27/12/2022.
+//  Created by MorganWang on 27/12/2022.
 //
 
 import UIKit
 
-class MWPuzzleBaseVC: UIViewController {
+class ImagePuzzlePuzzleBaseVC: UIViewController {
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let tempBtn = UIButton(type: UIButton.ButtonType.custom)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let tempLabel = UILabel()
+        tempLabel.font = UIFont.custom.courierFont
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.white

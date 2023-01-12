@@ -1,14 +1,14 @@
 //
-//  MWMainPuzzleItem.swift
+//  ImagePuzzleMainPuzzleItem.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 30/12/2022.
+//  Created by MorganWang on 30/12/2022.
 //
 
 import Foundation
 import UIKit
 
-class MWMainPuzzleItem {
+class ImagePuzzleMainPuzzleItem {
     var puzzleAreaIndex: Int = -99 // 第几块区域
     var imageRect: CGRect = CGRect.zero // 图片区域
     var image: UIImage? // 图片

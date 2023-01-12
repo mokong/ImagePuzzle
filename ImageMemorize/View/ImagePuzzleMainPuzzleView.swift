@@ -1,15 +1,15 @@
 //
-//  MWMainPuzzleView.swift
+//  ImagePuzzleMainPuzzleView.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 28/12/2022.
+//  Created by MorganWang on 28/12/2022.
 //
 
 import UIKit
 import Darwin
 import MKCommonSwiftLib
 
-class MWMainPuzzleView: UIView {
+class ImagePuzzleMainPuzzleView: UIView {
 
     // MARK: - properties
     private(set) lazy var backView: UIView = UIView(frame: CGRect.zero)
@@ -76,7 +76,7 @@ class MWMainPuzzleView: UIView {
         }
     }
     
-    func updateSingleView(with item: MWMainPuzzleItem) {
+    func updateSingleView(with item: ImagePuzzleMainPuzzleItem) {
         // get targetView from singleIndex
         let targetImageView = getSubImageView(from: item.puzzleAreaIndex)
         targetImageView?.image = item.image

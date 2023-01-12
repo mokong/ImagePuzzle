@@ -1,8 +1,8 @@
 //
-//  MWPuzzleConst.swift
+//  ImagePuzzleConst.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 28/12/2022.
+//  Created by MorganWang on 28/12/2022.
 //
 
 import Foundation
@@ -19,7 +19,7 @@ let kAppStoreID = "1664054825"
 let kAppStoreUrl = "https://apps.apple.com/cn/app/qq/id1664054825"
 
 
-struct MWPuzzleConst {
+struct ImagePuzzleConst {
     static func isEnableTint() -> Bool {
         var result = false
         if let value = UserDefaults.standard.value(forKey: kEnableTintKey) as? Bool {

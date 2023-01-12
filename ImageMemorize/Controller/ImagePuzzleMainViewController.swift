@@ -1,8 +1,8 @@
 //
-//  MWMainViewController.swift
+//  ImagePuzzleMainViewController.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 27/12/2022.
+//  Created by MorganWang on 27/12/2022.
 //
 
 import UIKit
@@ -10,12 +10,12 @@ import SnapKit
 import Darwin
 import Toast_Swift
 
-class MWMainViewController: MWPuzzleBaseVC {
+class ImagePuzzleMainViewController: ImagePuzzlePuzzleBaseVC {
     
     // MARK: - properties
-    private(set) lazy var topModule = MWMainTopModule(self)
-    private(set) lazy var puzzleModule = MWMainPuzzleModule(self)
-    private(set) lazy var bottomModule = MWMainBottomModule(self)
+    private(set) lazy var topModule = ImagePuzzleMainTopModule(self)
+    private(set) lazy var puzzleModule = ImagePuzzleMainPuzzleModule(self)
+    private(set) lazy var bottomModule = ImagePuzzleMainBottomModule(self)
     private(set) var displayImage: UIImage? {
         didSet {
             generateBottomItemList()
@@ -24,18 +24,30 @@ class MWMainViewController: MWPuzzleBaseVC {
         }
     }
     
-    private(set) var puzzleItems: [MWMainPuzzleItem] = []
+    private(set) var puzzleItems: [ImagePuzzleMainPuzzleItem] = []
     private(set) var divideCount: Int = 9
     private(set) var matchCount: Int = 0
-    private(set) var matchSequenceList: [MWMainPuzzleItem] = []
-    private(set) var bottomDataList: [MWMainBottomItem] = []
-    private(set) var clipImageSequenceList: [MWMainBottomItem] = []
+    private(set) var matchSequenceList: [ImagePuzzleMainPuzzleItem] = []
+    private(set) var bottomDataList: [ImagePuzzleMainBottomItem] = []
+    private(set) var clipImageSequenceList: [ImagePuzzleMainBottomItem] = []
     private(set) var needRefresh = false
     private(set) var stepBackItem: UIBarButtonItem?
     
     // MARK: - view life cycle
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let tempLabel = UILabel()
+        tempLabel.font = UIFont.custom.courierFont
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Do any additional setup after loading the view.
         self.title = "拼图"
@@ -98,7 +110,7 @@ class MWMainViewController: MWPuzzleBaseVC {
     func handelPanMove(_ pandView: UIView) {
         print(pandView.center)
         let convertRect = self.view.convert(pandView.frame, from: pandView.superview)
-        var targetItem: MWMainPuzzleItem?
+        var targetItem: ImagePuzzleMainPuzzleItem?
         
         for item in puzzleItems {
             guard item.image == nil else {
@@ -240,7 +252,7 @@ class MWMainViewController: MWPuzzleBaseVC {
                 let y = CGFloat(row) * height
                 let rect = CGRect(x: x, y: y, width: width, height: height)
                 let image = displayImage.tailoring(in: rect)
-                let bottomItem = MWMainBottomItem()
+                let bottomItem = ImagePuzzleMainBottomItem()
                 bottomItem.image = image
                 bottomItem.imageClipIndex = row * number + column
                 print(bottomItem.imageClipIndex)
@@ -251,7 +263,7 @@ class MWMainViewController: MWPuzzleBaseVC {
     
     // MARK: - action
     @objc fileprivate func handleSettingAction(_ sender: UIBarButtonItem) {
-        let settingsVC = MWSettingsVC()
+        let settingsVC = ImagePuzzleSettingsVC()
         navigationController?.pushViewController(settingsVC, animated: true)
     }
     
@@ -295,7 +307,7 @@ class MWMainViewController: MWPuzzleBaseVC {
             if let existItem = existItem {
                 existItem.imageRect = convertRect
             } else {
-                let item = MWMainPuzzleItem()
+                let item = ImagePuzzleMainPuzzleItem()
                 item.imageRect = convertRect
                 item.puzzleAreaIndex = tagIndex
                 puzzleItems.append(item)

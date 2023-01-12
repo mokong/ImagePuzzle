@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4825B1EB295EDBBB000203D5 /* MWMainPuzzleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4825B1EA295EDBBB000203D5 /* MWMainPuzzleItem.swift */; };
+		4825B1EB295EDBBB000203D5 /* ImagePuzzleMainPuzzleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4825B1EA295EDBBB000203D5 /* ImagePuzzleMainPuzzleItem.swift */; };
 		4846550F295A7EBE0026B2AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846550E295A7EBE0026B2AB /* AppDelegate.swift */; };
 		48465518295A7EC00026B2AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48465517295A7EC00026B2AB /* Assets.xcassets */; };
 		4846551B295A7EC00026B2AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48465519295A7EC00026B2AB /* LaunchScreen.storyboard */; };
-		48465527295A8D0C0026B2AB /* MWMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465526295A8D0C0026B2AB /* MWMainViewController.swift */; };
-		48465529295A90F80026B2AB /* MWMainTopModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465528295A90F80026B2AB /* MWMainTopModule.swift */; };
-		4846552B295A91000026B2AB /* MWMainBottomModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846552A295A91000026B2AB /* MWMainBottomModule.swift */; };
-		4846552D295AD82F0026B2AB /* MWMainPuzzleModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846552C295AD82F0026B2AB /* MWMainPuzzleModule.swift */; };
-		4846552F295AD97F0026B2AB /* MWPuzzleBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846552E295AD97F0026B2AB /* MWPuzzleBaseVC.swift */; };
-		48465532295AD9FB0026B2AB /* MWPuzzleBaseWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465531295AD9FB0026B2AB /* MWPuzzleBaseWebVC.swift */; };
-		48465534295ADA340026B2AB /* MWPuzzleBaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465533295ADA340026B2AB /* MWPuzzleBaseNC.swift */; };
-		4846553C295AEA340026B2AB /* MWMainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846553B295AEA340026B2AB /* MWMainTopView.swift */; };
-		486475CB29657D19002BF403 /* MWMainBottomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486475CA29657D19002BF403 /* MWMainBottomItem.swift */; };
-		48F20D07295BE3F200B5007F /* MWMainPuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F20D06295BE3F200B5007F /* MWMainPuzzleView.swift */; };
-		48F20D09295C0C6E00B5007F /* MWPuzzleConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F20D08295C0C6E00B5007F /* MWPuzzleConst.swift */; };
-		48F20D12295C251300B5007F /* MWMainBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F20D11295C251300B5007F /* MWMainBottomView.swift */; };
-		48F21931296D12220051CA4E /* MWMainBottomSingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F21930296D12220051CA4E /* MWMainBottomSingleView.swift */; };
-		48F21933296D2CBC0051CA4E /* MWSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F21932296D2CBC0051CA4E /* MWSettingsVC.swift */; };
-		48F21937296D332E0051CA4E /* MWSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F21936296D332E0051CA4E /* MWSettingsCell.swift */; };
-		48F21939296D37DD0051CA4E /* MWSettingsRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F21938296D37DD0051CA4E /* MWSettingsRowItem.swift */; };
+		48465527295A8D0C0026B2AB /* ImagePuzzleMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465526295A8D0C0026B2AB /* ImagePuzzleMainViewController.swift */; };
+		48465529295A90F80026B2AB /* ImagePuzzleMainTopModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465528295A90F80026B2AB /* ImagePuzzleMainTopModule.swift */; };
+		4846552B295A91000026B2AB /* ImagePuzzleMainBottomModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846552A295A91000026B2AB /* ImagePuzzleMainBottomModule.swift */; };
+		4846552D295AD82F0026B2AB /* ImagePuzzleMainPuzzleModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846552C295AD82F0026B2AB /* ImagePuzzleMainPuzzleModule.swift */; };
+		4846552F295AD97F0026B2AB /* ImagePuzzlePuzzleBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846552E295AD97F0026B2AB /* ImagePuzzlePuzzleBaseVC.swift */; };
+		48465532295AD9FB0026B2AB /* ImagePuzzlePuzzleBaseWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465531295AD9FB0026B2AB /* ImagePuzzlePuzzleBaseWebVC.swift */; };
+		48465534295ADA340026B2AB /* ImagePuzzlePuzzleBaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48465533295ADA340026B2AB /* ImagePuzzlePuzzleBaseNC.swift */; };
+		4846553C295AEA340026B2AB /* ImagePuzzleMainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846553B295AEA340026B2AB /* ImagePuzzleMainTopView.swift */; };
+		486475CB29657D19002BF403 /* ImagePuzzleMainBottomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486475CA29657D19002BF403 /* ImagePuzzleMainBottomItem.swift */; };
+		48F20D07295BE3F200B5007F /* ImagePuzzleMainPuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F20D06295BE3F200B5007F /* ImagePuzzleMainPuzzleView.swift */; };
+		48F20D09295C0C6E00B5007F /* ImagePuzzleConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F20D08295C0C6E00B5007F /* ImagePuzzleConst.swift */; };
+		48F20D12295C251300B5007F /* ImagePuzzleMainBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F20D11295C251300B5007F /* ImagePuzzleMainBottomView.swift */; };
+		48F21931296D12220051CA4E /* ImagePuzzleMainBottomSingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F21930296D12220051CA4E /* ImagePuzzleMainBottomSingleView.swift */; };
+		48F21933296D2CBC0051CA4E /* ImagePuzzleSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F21932296D2CBC0051CA4E /* ImagePuzzleSettingsVC.swift */; };
+		48F21937296D332E0051CA4E /* ImagePuzzleSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F21936296D332E0051CA4E /* ImagePuzzleSettingsCell.swift */; };
+		48F21939296D37DD0051CA4E /* ImagePuzzleSettingsRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F21938296D37DD0051CA4E /* ImagePuzzleSettingsRowItem.swift */; };
 		48F2193D296D3B320051CA4E /* placeholder_image_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F2193A296D3B320051CA4E /* placeholder_image_2@2x.png */; };
 		48F2193E296D3B320051CA4E /* placeholder_image_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F2193B296D3B320051CA4E /* placeholder_image_1@2x.png */; };
-		48F21941296D42A60051CA4E /* MWSettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F21940296D42A60051CA4E /* MWSettingsHeaderView.swift */; };
+		48F21941296D42A60051CA4E /* ImagePuzzleSettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F21940296D42A60051CA4E /* ImagePuzzleSettingsHeaderView.swift */; };
 		48F21948296D559A0051CA4E /* placeholder_image_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F21942296D559A0051CA4E /* placeholder_image_4@2x.png */; };
 		48F21949296D559A0051CA4E /* placeholder_image_8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F21943296D559A0051CA4E /* placeholder_image_8@2x.png */; };
 		48F2194A296D559A0051CA4E /* placeholder_image_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F21944296D559A0051CA4E /* placeholder_image_3@2x.png */; };
@@ -41,31 +41,31 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4825B1EA295EDBBB000203D5 /* MWMainPuzzleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMainPuzzleItem.swift; sourceTree = "<group>"; };
+		4825B1EA295EDBBB000203D5 /* ImagePuzzleMainPuzzleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainPuzzleItem.swift; sourceTree = "<group>"; };
 		4846550B295A7EBE0026B2AB /* ImageMemorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageMemorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4846550E295A7EBE0026B2AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48465517295A7EC00026B2AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4846551A295A7EC00026B2AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4846551C295A7EC00026B2AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48465526295A8D0C0026B2AB /* MWMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMainViewController.swift; sourceTree = "<group>"; };
-		48465528295A90F80026B2AB /* MWMainTopModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMainTopModule.swift; sourceTree = "<group>"; };
-		4846552A295A91000026B2AB /* MWMainBottomModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMainBottomModule.swift; sourceTree = "<group>"; };
-		4846552C295AD82F0026B2AB /* MWMainPuzzleModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMainPuzzleModule.swift; sourceTree = "<group>"; };
-		4846552E295AD97F0026B2AB /* MWPuzzleBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWPuzzleBaseVC.swift; sourceTree = "<group>"; };
-		48465531295AD9FB0026B2AB /* MWPuzzleBaseWebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWPuzzleBaseWebVC.swift; sourceTree = "<group>"; };
-		48465533295ADA340026B2AB /* MWPuzzleBaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWPuzzleBaseNC.swift; sourceTree = "<group>"; };
-		4846553B295AEA340026B2AB /* MWMainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMainTopView.swift; sourceTree = "<group>"; };
-		486475CA29657D19002BF403 /* MWMainBottomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMainBottomItem.swift; sourceTree = "<group>"; };
-		48F20D06295BE3F200B5007F /* MWMainPuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMainPuzzleView.swift; sourceTree = "<group>"; };
-		48F20D08295C0C6E00B5007F /* MWPuzzleConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWPuzzleConst.swift; sourceTree = "<group>"; };
-		48F20D11295C251300B5007F /* MWMainBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMainBottomView.swift; sourceTree = "<group>"; };
-		48F21930296D12220051CA4E /* MWMainBottomSingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMainBottomSingleView.swift; sourceTree = "<group>"; };
-		48F21932296D2CBC0051CA4E /* MWSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWSettingsVC.swift; sourceTree = "<group>"; };
-		48F21936296D332E0051CA4E /* MWSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWSettingsCell.swift; sourceTree = "<group>"; };
-		48F21938296D37DD0051CA4E /* MWSettingsRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWSettingsRowItem.swift; sourceTree = "<group>"; };
+		48465526295A8D0C0026B2AB /* ImagePuzzleMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainViewController.swift; sourceTree = "<group>"; };
+		48465528295A90F80026B2AB /* ImagePuzzleMainTopModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainTopModule.swift; sourceTree = "<group>"; };
+		4846552A295A91000026B2AB /* ImagePuzzleMainBottomModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainBottomModule.swift; sourceTree = "<group>"; };
+		4846552C295AD82F0026B2AB /* ImagePuzzleMainPuzzleModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainPuzzleModule.swift; sourceTree = "<group>"; };
+		4846552E295AD97F0026B2AB /* ImagePuzzlePuzzleBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzlePuzzleBaseVC.swift; sourceTree = "<group>"; };
+		48465531295AD9FB0026B2AB /* ImagePuzzlePuzzleBaseWebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzlePuzzleBaseWebVC.swift; sourceTree = "<group>"; };
+		48465533295ADA340026B2AB /* ImagePuzzlePuzzleBaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzlePuzzleBaseNC.swift; sourceTree = "<group>"; };
+		4846553B295AEA340026B2AB /* ImagePuzzleMainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainTopView.swift; sourceTree = "<group>"; };
+		486475CA29657D19002BF403 /* ImagePuzzleMainBottomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainBottomItem.swift; sourceTree = "<group>"; };
+		48F20D06295BE3F200B5007F /* ImagePuzzleMainPuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainPuzzleView.swift; sourceTree = "<group>"; };
+		48F20D08295C0C6E00B5007F /* ImagePuzzleConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleConst.swift; sourceTree = "<group>"; };
+		48F20D11295C251300B5007F /* ImagePuzzleMainBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainBottomView.swift; sourceTree = "<group>"; };
+		48F21930296D12220051CA4E /* ImagePuzzleMainBottomSingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleMainBottomSingleView.swift; sourceTree = "<group>"; };
+		48F21932296D2CBC0051CA4E /* ImagePuzzleSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleSettingsVC.swift; sourceTree = "<group>"; };
+		48F21936296D332E0051CA4E /* ImagePuzzleSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleSettingsCell.swift; sourceTree = "<group>"; };
+		48F21938296D37DD0051CA4E /* ImagePuzzleSettingsRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleSettingsRowItem.swift; sourceTree = "<group>"; };
 		48F2193A296D3B320051CA4E /* placeholder_image_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_image_2@2x.png"; sourceTree = "<group>"; };
 		48F2193B296D3B320051CA4E /* placeholder_image_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_image_1@2x.png"; sourceTree = "<group>"; };
-		48F21940296D42A60051CA4E /* MWSettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWSettingsHeaderView.swift; sourceTree = "<group>"; };
+		48F21940296D42A60051CA4E /* ImagePuzzleSettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePuzzleSettingsHeaderView.swift; sourceTree = "<group>"; };
 		48F21942296D559A0051CA4E /* placeholder_image_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_image_4@2x.png"; sourceTree = "<group>"; };
 		48F21943296D559A0051CA4E /* placeholder_image_8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_image_8@2x.png"; sourceTree = "<group>"; };
 		48F21944296D559A0051CA4E /* placeholder_image_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_image_3@2x.png"; sourceTree = "<group>"; };
@@ -128,11 +128,11 @@
 		48465522295A8C700026B2AB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4846552E295AD97F0026B2AB /* MWPuzzleBaseVC.swift */,
-				48465531295AD9FB0026B2AB /* MWPuzzleBaseWebVC.swift */,
-				48465533295ADA340026B2AB /* MWPuzzleBaseNC.swift */,
-				48465526295A8D0C0026B2AB /* MWMainViewController.swift */,
-				48F21932296D2CBC0051CA4E /* MWSettingsVC.swift */,
+				4846552E295AD97F0026B2AB /* ImagePuzzlePuzzleBaseVC.swift */,
+				48465531295AD9FB0026B2AB /* ImagePuzzlePuzzleBaseWebVC.swift */,
+				48465533295ADA340026B2AB /* ImagePuzzlePuzzleBaseNC.swift */,
+				48465526295A8D0C0026B2AB /* ImagePuzzleMainViewController.swift */,
+				48F21932296D2CBC0051CA4E /* ImagePuzzleSettingsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -140,9 +140,9 @@
 		48465523295A8C7D0026B2AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4825B1EA295EDBBB000203D5 /* MWMainPuzzleItem.swift */,
-				486475CA29657D19002BF403 /* MWMainBottomItem.swift */,
-				48F21938296D37DD0051CA4E /* MWSettingsRowItem.swift */,
+				4825B1EA295EDBBB000203D5 /* ImagePuzzleMainPuzzleItem.swift */,
+				486475CA29657D19002BF403 /* ImagePuzzleMainBottomItem.swift */,
+				48F21938296D37DD0051CA4E /* ImagePuzzleSettingsRowItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,12 +150,12 @@
 		48465524295A8C840026B2AB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4846553B295AEA340026B2AB /* MWMainTopView.swift */,
-				48F20D06295BE3F200B5007F /* MWMainPuzzleView.swift */,
-				48F20D11295C251300B5007F /* MWMainBottomView.swift */,
-				48F21930296D12220051CA4E /* MWMainBottomSingleView.swift */,
-				48F21936296D332E0051CA4E /* MWSettingsCell.swift */,
-				48F21940296D42A60051CA4E /* MWSettingsHeaderView.swift */,
+				4846553B295AEA340026B2AB /* ImagePuzzleMainTopView.swift */,
+				48F20D06295BE3F200B5007F /* ImagePuzzleMainPuzzleView.swift */,
+				48F20D11295C251300B5007F /* ImagePuzzleMainBottomView.swift */,
+				48F21930296D12220051CA4E /* ImagePuzzleMainBottomSingleView.swift */,
+				48F21936296D332E0051CA4E /* ImagePuzzleSettingsCell.swift */,
+				48F21940296D42A60051CA4E /* ImagePuzzleSettingsHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,9 +163,9 @@
 		48465525295A8C890026B2AB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				48465528295A90F80026B2AB /* MWMainTopModule.swift */,
-				4846552C295AD82F0026B2AB /* MWMainPuzzleModule.swift */,
-				4846552A295A91000026B2AB /* MWMainBottomModule.swift */,
+				48465528295A90F80026B2AB /* ImagePuzzleMainTopModule.swift */,
+				4846552C295AD82F0026B2AB /* ImagePuzzleMainPuzzleModule.swift */,
+				4846552A295A91000026B2AB /* ImagePuzzleMainBottomModule.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 		48465530295AD9DA0026B2AB /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				48F20D08295C0C6E00B5007F /* MWPuzzleConst.swift */,
+				48F20D08295C0C6E00B5007F /* ImagePuzzleConst.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -334,25 +334,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48F20D09295C0C6E00B5007F /* MWPuzzleConst.swift in Sources */,
+				48F20D09295C0C6E00B5007F /* ImagePuzzleConst.swift in Sources */,
 				4846550F295A7EBE0026B2AB /* AppDelegate.swift in Sources */,
-				48465534295ADA340026B2AB /* MWPuzzleBaseNC.swift in Sources */,
-				48465532295AD9FB0026B2AB /* MWPuzzleBaseWebVC.swift in Sources */,
-				48F21931296D12220051CA4E /* MWMainBottomSingleView.swift in Sources */,
-				4846552F295AD97F0026B2AB /* MWPuzzleBaseVC.swift in Sources */,
-				48F21939296D37DD0051CA4E /* MWSettingsRowItem.swift in Sources */,
-				48F20D07295BE3F200B5007F /* MWMainPuzzleView.swift in Sources */,
-				486475CB29657D19002BF403 /* MWMainBottomItem.swift in Sources */,
-				48465529295A90F80026B2AB /* MWMainTopModule.swift in Sources */,
-				48F21937296D332E0051CA4E /* MWSettingsCell.swift in Sources */,
-				4825B1EB295EDBBB000203D5 /* MWMainPuzzleItem.swift in Sources */,
-				4846552D295AD82F0026B2AB /* MWMainPuzzleModule.swift in Sources */,
-				48F21933296D2CBC0051CA4E /* MWSettingsVC.swift in Sources */,
-				48465527295A8D0C0026B2AB /* MWMainViewController.swift in Sources */,
-				4846553C295AEA340026B2AB /* MWMainTopView.swift in Sources */,
-				48F20D12295C251300B5007F /* MWMainBottomView.swift in Sources */,
-				4846552B295A91000026B2AB /* MWMainBottomModule.swift in Sources */,
-				48F21941296D42A60051CA4E /* MWSettingsHeaderView.swift in Sources */,
+				48465534295ADA340026B2AB /* ImagePuzzlePuzzleBaseNC.swift in Sources */,
+				48465532295AD9FB0026B2AB /* ImagePuzzlePuzzleBaseWebVC.swift in Sources */,
+				48F21931296D12220051CA4E /* ImagePuzzleMainBottomSingleView.swift in Sources */,
+				4846552F295AD97F0026B2AB /* ImagePuzzlePuzzleBaseVC.swift in Sources */,
+				48F21939296D37DD0051CA4E /* ImagePuzzleSettingsRowItem.swift in Sources */,
+				48F20D07295BE3F200B5007F /* ImagePuzzleMainPuzzleView.swift in Sources */,
+				486475CB29657D19002BF403 /* ImagePuzzleMainBottomItem.swift in Sources */,
+				48465529295A90F80026B2AB /* ImagePuzzleMainTopModule.swift in Sources */,
+				48F21937296D332E0051CA4E /* ImagePuzzleSettingsCell.swift in Sources */,
+				4825B1EB295EDBBB000203D5 /* ImagePuzzleMainPuzzleItem.swift in Sources */,
+				4846552D295AD82F0026B2AB /* ImagePuzzleMainPuzzleModule.swift in Sources */,
+				48F21933296D2CBC0051CA4E /* ImagePuzzleSettingsVC.swift in Sources */,
+				48465527295A8D0C0026B2AB /* ImagePuzzleMainViewController.swift in Sources */,
+				4846553C295AEA340026B2AB /* ImagePuzzleMainTopView.swift in Sources */,
+				48F20D12295C251300B5007F /* ImagePuzzleMainBottomView.swift in Sources */,
+				4846552B295A91000026B2AB /* ImagePuzzleMainBottomModule.swift in Sources */,
+				48F21941296D42A60051CA4E /* ImagePuzzleSettingsHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

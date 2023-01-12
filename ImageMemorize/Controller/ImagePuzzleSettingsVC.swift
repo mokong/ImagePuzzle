@@ -1,43 +1,60 @@
 //
-//  MWSettingsVC.swift
+//  ImagePuzzleSettingsVC.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 10/01/2023.
+//  Created by MorganWang on 10/01/2023.
 //
 
 import UIKit
 
-class MWSettingsVC: MWPuzzleBaseVC {
+class ImagePuzzleSettingsVC: ImagePuzzlePuzzleBaseVC {
     
     // MARK: - properties
-    fileprivate lazy var headerView: MWSettingsHeaderView = MWSettingsHeaderView(frame: .zero)
+    fileprivate lazy var headerView: ImagePuzzleSettingsHeaderView = ImagePuzzleSettingsHeaderView(frame: .zero)
     fileprivate lazy var tableView: UITableView = UITableView(frame: self.view.bounds, style: UITableView.Style.plain)
-    fileprivate var dataList: [MWSettingsRowItem] = []
+    fileprivate var dataList: [ImagePuzzleSettingsRowItem] = []
     
     // MARK: - view life cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let tempBtn = UIButton(type: UIButton.ButtonType.custom)
+    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let tempLabel = UILabel()
+        tempLabel.font = UIFont.custom.courierFont
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Do any additional setup after loading the view.
         self.title = "设置"
         setupSubviews()
-        setupLayouts()
         setupData()
     }
     
     // MARK: - init
     fileprivate func setupSubviews() {
         view.backgroundColor = UIColor.custom.fifth
-        setupTableView()
-    }
-    
-    fileprivate func setupTableView() {
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = UIColor.custom.fifth
-        tableView.register(MWSettingsCell.self, forCellReuseIdentifier: MWSettingsCell.reuseIdentifer())
+        tableView.register(ImagePuzzleSettingsCell.self, forCellReuseIdentifier: ImagePuzzleSettingsCell.reuseIdentifer())
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = UIColor.custom.primary
         tableView.isScrollEnabled = false
@@ -45,25 +62,23 @@ class MWSettingsVC: MWPuzzleBaseVC {
         
         headerView.frame = CGRect(x: 0.0, y: 0.0, width: kScreenWidth, height: 176.0)
         tableView.tableHeaderView = headerView
-    }
-    
-    fileprivate func setupLayouts() {
+
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
     
     fileprivate func setupData() {
-        dataList = MWSettingsRowItem.settingsList()
+        dataList = ImagePuzzleSettingsRowItem.settingsList()
     }
     
     // MARK: - utils
     
     
     // MARK: - action
-    fileprivate func handleSwitch(_ isEnabledSwitch: Bool, item: MWSettingsRowItem) {
+    fileprivate func handleSwitch(_ isEnabledSwitch: Bool, item: ImagePuzzleSettingsRowItem) {
         // save value to lcoal, refresh after back to home page
-        MWPuzzleConst.saveEnableTint(isEnabledSwitch)
+        ImagePuzzleConst.saveEnableTint(isEnabledSwitch)
         NotificationCenter.default.post(name: NSNotification.Name(kRefreshMainVCNote), object: nil)
     }
     
@@ -93,7 +108,7 @@ class MWSettingsVC: MWPuzzleBaseVC {
     }
     
     fileprivate func handleMoveToPrivacyPage() {
-        let webVC = MWPuzzleBaseWebVC()
+        let webVC = ImagePuzzlePuzzleBaseWebVC()
         webVC.title = "隐私政策"
         webVC.urlStr = "https://www.yuque.com/morgan-wang/ygyt1g/cchwo7c1505k82u1"
         navigationController?.pushViewController(webVC, animated: true)
@@ -105,7 +120,7 @@ class MWSettingsVC: MWPuzzleBaseVC {
     
 }
 
-extension MWSettingsVC: UITableViewDelegate, UITableViewDataSource {
+extension ImagePuzzleSettingsVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -135,9 +150,9 @@ extension MWSettingsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: MWSettingsCell.reuseIdentifer(), for: indexPath) as? MWSettingsCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: ImagePuzzleSettingsCell.reuseIdentifer(), for: indexPath) as? ImagePuzzleSettingsCell
         if cell == nil {
-            cell = MWSettingsCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: MWSettingsCell.reuseIdentifer())
+            cell = ImagePuzzleSettingsCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: ImagePuzzleSettingsCell.reuseIdentifer())
         }
         if indexPath.row < dataList.count {
             let item = dataList[indexPath.row]

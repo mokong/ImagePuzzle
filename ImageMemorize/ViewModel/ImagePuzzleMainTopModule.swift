@@ -1,18 +1,18 @@
 //
-//  MWMainTopModule.swift
+//  ImagePuzzleMainTopModule.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 27/12/2022.
+//  Created by MorganWang on 27/12/2022.
 //
 
 import Foundation
 import UIKit
 import MKCommonSwiftLib
 
-class MWMainTopModule {
+class ImagePuzzleMainTopModule {
     // MARK: - properties
-    private(set) weak var vc: MWMainViewController?
-    private(set) lazy var view = MWMainTopView(frame: .zero)
+    private(set) weak var vc: ImagePuzzleMainViewController?
+    private(set) lazy var view = ImagePuzzleMainTopView(frame: .zero)
     private(set) var timer: Timer?
     private(set) var count: Int = 0
     
@@ -23,7 +23,7 @@ class MWMainTopModule {
     }
     
     // MARK: - init
-    init(_ vc: MWMainViewController) {
+    init(_ vc: ImagePuzzleMainViewController) {
         self.vc = vc
         
         setupSubviews()

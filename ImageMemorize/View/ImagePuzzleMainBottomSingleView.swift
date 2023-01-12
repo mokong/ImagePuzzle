@@ -1,13 +1,13 @@
 //
-//  MWMainBottomSingleView.swift
+//  ImagePuzzleMainBottomSingleView.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 10/01/2023.
+//  Created by MorganWang on 10/01/2023.
 //
 
 import UIKit
 
-class MWMainBottomSingleView: UIView {
+class ImagePuzzleMainBottomSingleView: UIView {
 
     // MARK: - properties
     var tappedCallback: ((UIButton) -> Void)?

@@ -1,14 +1,14 @@
 //
-//  MWMainTopView.swift
+//  ImagePuzzleMainTopView.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 27/12/2022.
+//  Created by MorganWang on 27/12/2022.
 //
 
 import UIKit
 import SnapKit
 
-class MWMainTopView: UIView {
+class ImagePuzzleMainTopView: UIView {
 
     // MARK: - properties
     private lazy var timeBtn = UIButton(type: UIButton.ButtonType.custom)

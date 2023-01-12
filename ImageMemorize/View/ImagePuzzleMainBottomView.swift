@@ -1,13 +1,13 @@
 //
-//  MWMainBottomView.swift
+//  ImagePuzzleMainBottomView.swift
 //  ImageMemorize
 //
-//  Created by Horizon on 28/12/2022.
+//  Created by MorganWang on 28/12/2022.
 //
 
 import UIKit
 
-class MWMainBottomView: UIView {
+class ImagePuzzleMainBottomView: UIView {
 
     // MARK: - properties
     var tappedCallback: ((Int) -> Void)?
@@ -42,7 +42,7 @@ class MWMainBottomView: UIView {
     }
     
     // MARK: - utils
-    func updateSubviews(with divideCount: Int, itemList: [MWMainBottomItem]) {
+    func updateSubviews(with divideCount: Int, itemList: [ImagePuzzleMainBottomItem]) {
         backView.removeAllSubviews()
         
         let remainNum = divideCount % kMaxInRow
@@ -68,7 +68,7 @@ class MWMainBottomView: UIView {
             for j in 0..<rowNum {
                 leftSpace = gapSpace +  CGFloat(j) * (whValue + gapSpace)
                 
-                let singleView = MWMainBottomSingleView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
+                let singleView = ImagePuzzleMainBottomSingleView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
                 backView.addSubview(singleView)
 
                 let currentIndex = i * kMaxInRow + j
@@ -92,9 +92,9 @@ class MWMainBottomView: UIView {
         }
     }
     
-    fileprivate func getTargetView(from index: Int) -> MWMainBottomSingleView? {
+    fileprivate func getTargetView(from index: Int) -> ImagePuzzleMainBottomSingleView? {
         for subview in backView.subviews {
-            if let tempSingleView = subview as? MWMainBottomSingleView,
+            if let tempSingleView = subview as? ImagePuzzleMainBottomSingleView,
                tempSingleView.singleBtn.tag == kTagBeginValue + index {
                 return tempSingleView
             }
@@ -102,7 +102,7 @@ class MWMainBottomView: UIView {
         return nil
     }
     
-    func retrieveBack(with item: MWMainBottomItem) {
+    func retrieveBack(with item: ImagePuzzleMainBottomItem) {
         guard let targetSingleView = getTargetView(from: item.displayIndex) else {
             return
         }
