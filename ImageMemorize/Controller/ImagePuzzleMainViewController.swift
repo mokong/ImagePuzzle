@@ -188,6 +188,7 @@ class ImagePuzzleMainViewController: ImagePuzzlePuzzleBaseVC {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + delayDuration) {
             self.matchCount = 0
+            self.updateStepbackDisplay()
             if !allMatched {
                 self.doesnotMatchResetDisplay()
             } else {
